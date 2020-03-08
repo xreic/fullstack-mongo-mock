@@ -15,6 +15,7 @@ export default class App extends React.Component {
 
     this.componentDidMount = this.componentDidMount.bind(this);
     this.retrieveProducts = this.retrieveProducts.bind(this);
+    this.onClickChangeViewingItem = this.onClickChangeViewingItem.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,12 @@ export default class App extends React.Component {
       this.setState({
         items: data,
       });
+    });
+  }
+
+  onClickChangeViewingItem(e, index) {
+    this.setState({
+      viewingItemIndex: index,
     });
   }
 
@@ -49,7 +56,10 @@ export default class App extends React.Component {
             />
           </div>
           <div className="col-md-5 product-list-container">
-            <ProductList items={this.state.items} />
+            <ProductList
+              items={this.state.items}
+              onClickChangeViewingItem={this.onClickChangeViewingItem}
+            />
           </div>
         </div>
       </div>

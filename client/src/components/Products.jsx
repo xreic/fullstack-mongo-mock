@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Products = ({ item, index }) => {
+const Products = ({ item, index, onClickChangeViewingItem }) => {
   return (
-    <div className="product-list-entry">
+    <div
+      className="product-list-entry"
+      onClick={(e) => onClickChangeViewingItem(e, index)}
+    >
       <img src={item.image}></img>
       <div>
         <div>Item: {item.item}</div>
