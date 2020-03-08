@@ -57,7 +57,7 @@ export default class ProductViewer extends React.Component {
     if (this.props.item === undefined) {
       return (
         <div className="product-viewer">
-          <div>No items. Final Destination. Fox Only.</div>
+          <h1>No items. Final Destination. Fox Only.</h1>
         </div>
       );
     } else {

@@ -13,4 +13,8 @@ router
   .put(controller.put)
   .delete(controller.delete);
 
+router
+  .route('/products/:item')
+  .get(controller.find);
+
 module.exports = router;

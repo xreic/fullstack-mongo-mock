@@ -6,9 +6,13 @@ var productSchema = mongoose.Schema({
     required: true,
   },
 
-  image: {
+  lower: {
     type: String,
     required: true,
+  },
+
+  image: {
+    type: String,
   },
 
   ends_in: {
@@ -28,17 +32,3 @@ var productSchema = mongoose.Schema({
 });
 
 module.exports = productSchema;
-
-/*
-  ensure your schema has the following:
-    item:
-      - string,
-    min_cost:
-      - number,
-    curr_bid:
-      - number,
-    ends_in:
-      - number
-    image:
-      - string
-*/

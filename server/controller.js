@@ -6,7 +6,6 @@ const controller = {
   get: (req, res) => {
     Product.getProductsHelper()
       .then((allItems) => {
-        console.log(allItems);
         res.status(200).send(allItems).end();
       })
       .catch((err) => {
@@ -16,7 +15,22 @@ const controller = {
         res.status(400).send(err).end();
       });
   },
+
+  find: (req, res) => {
+    Product.findProductsHelper(req.params.item)
+      .then((allItems) => {
+        res.status(200).send(allItems).end();
+      })
+      .catch((err) => {
+        console.error('------- Controllers / Find / Error -------');
+        console.error(err);
+        console.error('------- Controllers / Find / Error -------');
+        res.status(400).send(err).end();
+      });
+  },
+
   post: (req, res) => {
+    req.body['lower'] = req.body.item.toLowerCase();
     Product.postProductsHelper(req.body)
       .then((result) => {
         console.log(result);
@@ -29,6 +43,7 @@ const controller = {
         res.status(400).send(err).end();
       });
   },
+
   put: (req, res) => {
     Product.updateProductHelper(req.params._id, req.body.bid)
     .then((result) => {

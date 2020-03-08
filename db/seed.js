@@ -39,6 +39,7 @@ const createProduct = () => {
   } ${brand[Math.floor(Math.random(brand.length) * Math.floor(4))]} ${
     noun[Math.floor(Math.random() * Math.floor(noun.length))]
   }`;
+  product.lower = product.item.toLowerCase();
   product.min_cost = parseFloat(Math.ceil(Math.random() * Math.ceil(1000)));
   product.curr_bid = parseFloat(Math.ceil(Math.random() * Math.ceil(10000)));
   product.ends_in = Math.ceil(Math.random() * Math.ceil(3));

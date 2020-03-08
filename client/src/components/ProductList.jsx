@@ -19,7 +19,7 @@ const ProductList = ({ items, onClickChangeViewingItem }) => {
   } else {
     return (
       <div className="product-list">
-        <div>No items. Final Destination. Fox Only.</div>
+        <h2>No items. Final Destination. Fox Only.</h2>
       </div>
     );
   }
