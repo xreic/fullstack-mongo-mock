@@ -6,17 +6,30 @@ import Search from './Search';
 import axios from 'axios';
 
 export default class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
+      productList: [],
+    };
 
-    }
-
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.retrieveProducts = this.retrieveProducts.bind(this);
   }
 
-  render(){
-  
-    return(
+  componentDidMount() {
+    this.retrieveProducts();
+  }
+
+  retrieveProducts() {
+    axios.get('/products').then(({ data }) => {
+      this.setState({
+        productList: data,
+      }, () => console.log(this.state));
+    });
+  }
+
+  render() {
+    return (
       <div>
         <div>
           <h1>EBID</h1>
@@ -32,10 +45,10 @@ export default class App extends React.Component {
             <ProductViewer />
           </div>
           <div className="col-md-5 product-list-container">
-            <ProductList  />
+            <ProductList />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
