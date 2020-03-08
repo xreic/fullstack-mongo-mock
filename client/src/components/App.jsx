@@ -9,7 +9,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList: [],
+      items: [],
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -23,8 +23,8 @@ export default class App extends React.Component {
   retrieveProducts() {
     axios.get('/products').then(({ data }) => {
       this.setState({
-        productList: data,
-      }, () => console.log(this.state));
+        items: data,
+      });
     });
   }
 
@@ -45,7 +45,7 @@ export default class App extends React.Component {
             <ProductViewer />
           </div>
           <div className="col-md-5 product-list-container">
-            <ProductList />
+            <ProductList items={this.state.items}/>
           </div>
         </div>
       </div>
