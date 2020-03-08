@@ -1,7 +1,7 @@
 var Product = require('./index.js');
 // complete the dbhelpers
 var helpers = {
-  getProductsHelper: () => {},
+  getProductsHelper: () => Product.find({}),
   postProductsHelper: () => {},
   updateProductHelper: () => {},
   deleteProductHelper: () => {},

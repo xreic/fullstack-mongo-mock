@@ -1,10 +1,20 @@
 // Controller here
 // complete building out the controller
-var Product = require('../db/');
+var Product = require('../db/dbhelpers.js');
 
 const controller = {
   get: (req, res) => {
-    res.status(200).send('Get (1)').end();
+    Product.getProductsHelper()
+      .then((allItems) => {
+        console.log(allItems);
+        res.status(200).send(allItems).end();
+      })
+      .catch((err) => {
+        console.error('------- Controllers / Get / Error -------');
+        console.error(err);
+        console.error('------- Controllers / Get / Error -------');
+        res.status(400).send(err).end();
+      });
   },
   post: (req, res) => {
     res.status(200).send('Post (1)').end();
