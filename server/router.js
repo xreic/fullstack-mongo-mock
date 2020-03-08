@@ -6,11 +6,11 @@ const controller = require('./controller.js');
 router
   .route('/products')
   .get(controller.get)
-  .post(controller.post)
+  .post(controller.post);
 
 router
   .route('/products/:_id')
   .put(controller.put)
-  .delete(controller.delete)
+  .delete(controller.delete);
 
-module.exports = router
+module.exports = router;

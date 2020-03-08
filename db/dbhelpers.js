@@ -1,10 +1,10 @@
-var Product = require('./');
+var Product = require('./index.js');
 // complete the dbhelpers
 var helpers = {
   getProductsHelper: () => {},
   postProductsHelper: () => {},
   updateProductHelper: () => {},
-  deleteProductHelper: () => {}
+  deleteProductHelper: () => {},
 };
 
-module.exports = helpers
+module.exports = helpers;
