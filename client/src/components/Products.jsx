@@ -11,10 +11,10 @@ const Products = ({ item, index, onClickChangeViewingItem }) => {
         <div>Item: {item.item}</div>
         <br />
         <br />
-        <div>Starting Bid: ${item.min_cost}</div>
+        <div>Starting Bid: ${item.min_cost.toLocaleString()}</div>
         <br />
         <br />
-        <div>Current Bid: ${item.curr_bid}</div>
+        <div>Current Bid: ${item.curr_bid.toLocaleString()}</div>
         <br />
         <br />
         <div>Ends in: {item.ends_in} hr(s)</div>

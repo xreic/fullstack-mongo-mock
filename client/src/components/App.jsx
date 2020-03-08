@@ -53,6 +53,7 @@ export default class App extends React.Component {
             <ProductViewer
               viewingItemIndex={this.state.viewingItemIndex}
               item={this.state.items[this.state.viewingItemIndex]}
+              refreshData={this.retrieveProducts}
             />
           </div>
           <div className="col-md-5 product-list-container">
