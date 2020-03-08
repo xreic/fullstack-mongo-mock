@@ -1,9 +1,6 @@
 import React from 'react';
 
 const Products = ({ item, index }) => {
-  console.log('Item No.:', index + 1);
-  console.log('Item:', item.image);
-
   return (
     <div className="product-list-entry">
       <img src={item.image}></img>

@@ -2,8 +2,6 @@ import React from 'react';
 import Products from './Products';
 
 const ProductList = ({ items }) => {
-  console.log('------- Front End / Products.jsx -------');
-
   if (items.length > 0) {
     return (
       <div className="product-list">

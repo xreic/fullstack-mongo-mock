@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductList from './ProductList';
-import ProductViewer from './ProductViewer';
+import ProductViewer from './ProductViewer.jsx';
 import Search from './Search';
 
 import axios from 'axios';
@@ -10,6 +10,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       items: [],
+      viewingItemIndex: 0,
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -42,10 +43,13 @@ export default class App extends React.Component {
         </nav>
         <div className="row main-container">
           <div className="col-md-7 product-viewer-container">
-            <ProductViewer />
+            <ProductViewer
+              viewingItemIndex={this.state.viewingItemIndex}
+              item={this.state.items[this.state.viewingItemIndex]}
+            />
           </div>
           <div className="col-md-5 product-list-container">
-            <ProductList items={this.state.items}/>
+            <ProductList items={this.state.items} />
           </div>
         </div>
       </div>
